@@ -1,9 +1,9 @@
 import { Center } from "@react-three/drei"
 import { useThree } from "@react-three/fiber"
 import { useControls } from "leva"
-import * as THREE from 'three'
 import { Perf } from 'r3f-perf'
-
+import { Suspense } from "react"
+import * as THREE from 'three'
 
 import Lights from "./Lights"
 import Effect from "./Effect"
@@ -11,7 +11,6 @@ import Emissions from "./Emissions"
 import Ground from "./Ground"
 import Modeles from "./Modeles"
 import Reflection from "./Reflection"
-import { Suspense } from "react"
 
 export default function Experience()
 {
@@ -50,17 +49,15 @@ export default function Experience()
         <color args={['#1d1b1b']} attach='background' />
         <Center>
             <group>
-                <Perf position="top-left" />
-                <Effect />
                 <Suspense fallback={false}>
+                    <Perf position="top-left" />
+                    <Effect />
                     <Modeles />
-                </Suspense>
-                <Emissions />
-                <Lights />
-                <Suspense fallback={false}>
+                    <Emissions />
+                    <Lights />
                     <Reflection />
+                    <Ground />
                 </Suspense>
-                <Ground />
             </group>
         </Center>
     </>

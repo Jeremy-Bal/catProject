@@ -4,14 +4,14 @@ import { useEffect } from "react"
 export default function Modeles()
 {
     
-    var modele1 = useGLTF('./baked-1.glb')
-    var baked1 = useTexture('./unwrap-1.jpg')
+    const modele1 = useGLTF('./baked-1.glb')
+    const baked1 = useTexture('./unwrap-1.jpg')
 
-    var modele2 = useGLTF('./baked-2.glb')
-    var baked2 = useTexture('./unwrap-2.jpg')
+    const modele2 = useGLTF('./baked-2.glb')
+    const baked2 = useTexture('./unwrap-2.jpg')
 
-    var modele3 = useGLTF('./baked-3.glb')
-    var baked3 = useTexture('./unwrap-3.jpg')
+    const modele3 = useGLTF('./baked-3.glb')
+    const baked3 = useTexture('./unwrap-3.jpg')
     
     // useEffect(()=>{
     //     modele1 = useGLTF('./baked-1.glb')
