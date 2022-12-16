@@ -7,8 +7,6 @@ export default function Ground()
     const props = useTexture({
         map: './ground/diff.jpg',
         roughnessMap: './ground/roughness.jpg',
-        normalMap: './ground/normal.jpg',
-        roughnessMap: './ground/roughness.jpg',
     })
 
     props.map.encoding = THREE.sRGBEncoding
