@@ -43,13 +43,13 @@ export default function Lights()
     // const pointLight3 = useRef();
     // const { scene } = useThree();
 
-    useEffect(()=>{
+    // useEffect(()=>{
         // const pointLightHelper = new THREE.PointLightHelper( pointLight.current, 5, 'blue');
         // const pointLightHelper2 = new THREE.PointLightHelper( pointLight2.current, 5, 'red');
         // const pointLightHelper3 = new THREE.PointLightHelper( pointLight3.current, 5, 'orange');
 
         // scene.add(pointLightHelper, pointLightHelper2, pointLightHelper3)
-    }, [])
+    // }, [])
     
 
     return <>

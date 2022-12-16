@@ -9,15 +9,16 @@ import './style.css'
 const root = createRoot(document.querySelector('#root'))
 
 root.render(
-    <StrictMode>
+    // <StrictMode>
         <Canvas
             camera={{
                 position: [ 30, 30, 30 ]
             }}
+            dpr={[1, 2]}
         >
                 
             <OrbitControls />
             <Experience />
         </Canvas>
-    </StrictMode>
+    // </StrictMode> 
 )

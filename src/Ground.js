@@ -10,7 +10,6 @@ export default function Ground()
     })
 
     props.map.encoding = THREE.sRGBEncoding
-    
     //leva
     const val = useControls('Reflection', {
         valBlur:{
