@@ -16,7 +16,7 @@ export default function Emissions()
 
     return <>
         <group>
-            <ambientLight color={'#ffffff'} />
+            {/* <ambientLight color={'#ffffff'} /> */}
 
             <mesh geometry={nodes.darkOrangeEmission.geometry}>
                  <meshBasicMaterial color={ [ 1, 1, 5 ] } toneMapped={ false }/>
