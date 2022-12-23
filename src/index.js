@@ -16,7 +16,7 @@ root.render(
             }}
             dpr={[1, 2]}>
 
-            <OrbitControls minDistance={100}/>
+            <OrbitControls minDistance={80} />
             <Experience />
         </Canvas>
         <Loader />
