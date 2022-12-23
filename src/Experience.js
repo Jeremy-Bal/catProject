@@ -1,6 +1,7 @@
 import { Center } from "@react-three/drei"
 import { useThree } from "@react-three/fiber"
 import { useControls } from "leva"
+
 import { Perf } from 'r3f-perf'
 import { Suspense } from "react"
 import * as THREE from 'three'
