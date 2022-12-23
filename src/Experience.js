@@ -14,8 +14,6 @@ import Reflection from "./Reflection"
 
 export default function Experience()
 {
-    console.log('ere render');
-
     const {farNumber, near, fov} = useControls('camera', {
         farNumber:{
             min: 0,
@@ -45,14 +43,15 @@ export default function Experience()
         gl.outputEncoding = THREE.sRGBEncoding
         gl.antialias = false
     })
+
     return <>
         <color args={['#1d1b1b']} attach='background' />
         <Center>
             <group>
-                <Suspense fallback={false}>
+                <Suspense fallback={null}>
+                    <Modeles />
                     <Perf position="top-left" />
                     <Effect />
-                    <Modeles />
                     <Emissions />
                     <Lights />
                     <Reflection />

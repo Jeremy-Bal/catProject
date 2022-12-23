@@ -4,7 +4,6 @@ import { useControls } from "leva"
 export default function Emissions()
 {
     const { nodes } = useGLTF('./emission1.glb')
-    const scene = useGLTF('./emission1.glb')
 
     const { color } = useControls({
         color: {

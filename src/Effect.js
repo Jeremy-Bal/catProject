@@ -4,7 +4,7 @@ export default function ()
 {
     return <>
         <EffectComposer>
-            <Bloom mipmapBlur intensity={0.7} luminanceThreshold={0.6}/>
+            <Bloom mipmapBlur intensity={0.9} luminanceThreshold={0.6}/>
         </EffectComposer>
     </>
 }
