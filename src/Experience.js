@@ -1,8 +1,6 @@
-import { Center } from "@react-three/drei"
-import { useThree } from "@react-three/fiber"
-import { useControls } from "leva"
+import { Center, OrbitControls } from "@react-three/drei"
+import { useFrame } from "@react-three/fiber"
 
-import { Perf } from 'r3f-perf'
 import { Suspense } from "react"
 import * as THREE from 'three'
 
@@ -15,48 +13,33 @@ import Reflection from "./Reflection"
 
 export default function Experience()
 {
-    const {farNumber, near, fov} = useControls('camera', {
-        farNumber:{
-            min: 0,
-            max: 1000,
-            step: 1,
-            value: 200
-        },
-        near:{
-            min: 0,
-            max: 100,
-            step: 0.0001,
-            value: 10
-        },
-        fov:{
-            min: 30,
-            max: 100,
-            step: 0.001,
-            value: 65
-        }
-    })
-    useThree(({camera, gl})=>{
-        camera.far = farNumber
-        camera.near = near
-        camera.fov = fov
-        camera.updateProjectionMatrix()
+    var orbitChange = false
+    const finalPosition = new THREE.Vector3(80, 25, 3.5)
 
-        gl.outputEncoding = THREE.sRGBEncoding
-        gl.antialias = false
+    useFrame(({ camera })=>{
+        if(orbitChange === false || camera.position.x > 81)
+        {
+            camera.position.lerp(finalPosition, 0.015)
+        }
     })
 
     return <>
+
         <color args={['#1d1b1b']} attach='background' />
+        <fog attach="fog" args={['#1d1b1b', 60, 200]} />
+
         <Center>
             <group>
+                <OrbitControls onStart={ ()=>orbitChange = true } />
+
                 <Suspense fallback={null}>
                     <Modeles />
-                    <Perf position="top-left" />
+                    <Ground />
                     <Effect />
                     <Emissions />
                     <Lights />
                     <Reflection />
-                    <Ground />
+                    {/* <Perf position="top-left" /> */}
                 </Suspense>
             </group>
         </Center>
