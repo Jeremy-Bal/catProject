@@ -92,8 +92,8 @@ export default function Ground()
     return <>
         <group>
             {/* <pointLight intensity={10} color={'red'} /> */}
-            <mesh rotation={[- Math.PI * 0.5, 0, 0]} position={[0, -0.1, 0]}>
-                <planeGeometry args={[110, 110]} />
+            <mesh rotation={[- Math.PI * 0.5, 0, 0]} position={[0, -0.001, 5]}>
+                <planeGeometry args={[108, 101]} />
                 <MeshReflectorMaterial
                     blur={[val.valBlur.x, val.valBlur.y]} // Blur ground reflections (width, heigt), 0 skips blur
                     {...props}

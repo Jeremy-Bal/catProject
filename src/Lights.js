@@ -18,8 +18,8 @@ export default function Lights()
         },
         pos2:{
             value:{
-                x: -42,
-                y: 9.5,
+                x: -31.5,
+                y: 37.5,
                 z: 50
             },
             min: -100,
@@ -53,10 +53,13 @@ export default function Lights()
     
 
     return <>
+        {/* Blue Light */}
         <pointLight args={['#99C9FF', 70, 62, 2]} position={[pos.x, pos.y, pos.z]} /* ref={pointLight} */ /> 
 
-        <pointLight args={['#B92223', 50, 70, 2]} position={[pos2.x, pos2.y, pos2.z]} /* ref={pointLight2} */ /> 
+        {/* Red Light */}
+        <pointLight args={['#B92223', 50, 70, 2]} position={[pos2.x, pos2.y, pos2.z]} intensity={110} /* ref={pointLight2} */ /> 
 
+        {/* Orange Light */}
         <pointLight args={['#FF9964', 80, 70, 2]} position={[pos3.x, pos3.y, pos3.z]} /* ref={pointLight3} */ /> 
     </>
 }

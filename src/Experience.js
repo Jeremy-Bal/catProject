@@ -14,7 +14,7 @@ import Reflection from "./Reflection"
 export default function Experience()
 {
     var orbitChange = false
-    const finalPosition = new THREE.Vector3(80, 25, 3.5)
+    const finalPosition = new THREE.Vector3(90, 40, 50)
 
     useFrame(({ camera })=>{
         if(orbitChange === false || camera.position.x > 81)
@@ -26,7 +26,7 @@ export default function Experience()
     return <>
 
         <color args={['#1d1b1b']} attach='background' />
-        <fog attach="fog" args={['#1d1b1b', 60, 200]} />
+        <fog attach="fog" args={['#1d1b1b', window.innerWidth <= 800 ? 120 : 130, 250]} />
 
         <Center>
             <group>

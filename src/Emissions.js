@@ -3,14 +3,14 @@ import { useControls } from "leva"
 
 export default function Emissions()
 {
-    const { nodes } = useGLTF('./emission1.glb')
+    const { nodes } = useGLTF('./emission.glb')
 
     const { color } = useControls({
         color: {
-            value : [ 0.2, 2.4, 2.0 ],
+            value : [ 0.05, 1.1, 0.05 ],
             min: 0,
-            max: 10,
-            step: 0.1
+            max: 5,
+            step: 0.01
         },
     })
 
@@ -22,11 +22,11 @@ export default function Emissions()
             </mesh>
             
             <mesh geometry={nodes.blueEmission.geometry}>
-                 <meshBasicMaterial color={[color[0], color[1], color[2]]} toneMapped={ false }/>
+                 <meshBasicMaterial color={[0.2, 2.4, 2.0]} toneMapped={ false }/>
             </mesh>
             
             <mesh geometry={nodes.greenEmission.geometry}>
-                 <meshBasicMaterial color={ [ 1.5, 1, 4 ] } toneMapped={ false }/>
+                 <meshBasicMaterial color={ [color[0], color[1], color[2]] } toneMapped={ false }/>
             </mesh>
             
             <mesh geometry={nodes.orangeEmission.geometry}>
@@ -38,7 +38,7 @@ export default function Emissions()
             </mesh>
             
             <mesh geometry={nodes.redEmission.geometry}>
-                 <meshBasicMaterial color={ [ 1.5, 1, 4 ] } toneMapped={ false }/>
+                 <meshBasicMaterial color={ [ 2.7, 0.05, 0.05 ] } toneMapped={ false }/>
             </mesh>
             
             <mesh geometry={nodes.whiteEmission.geometry}>
