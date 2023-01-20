@@ -19,7 +19,7 @@ root.render(
             camera={{
                 position: [ 125, 100, 100 ],
                 near: 10,
-                far: window.innerWidth <= 800 ? 230 : 200,
+                far: window.innerWidth <= 800 ? 230 : 250,
                 fov: window.innerWidth <= 800 ? 90 : 40
             }}
             dpr={[1, 2]}
